@@ -83,7 +83,6 @@ a {
 .site-header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   padding-top: clamp(1.75rem, 4vw, 3.5rem);
   animation: fade-down 900ms 120ms both;
 }
@@ -104,27 +103,6 @@ a {
   height: auto;
 }
 
-.launch-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding-top: 0.2rem;
-  color: #c9d2e2;
-  font-family: "DM Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.status-dot {
-  position: relative;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--teal-bright);
-  box-shadow: 0 0 0 5px rgba(23, 181, 180, 0.12);
-}
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(500px, 1.18fr);
@@ -135,25 +113,6 @@ a {
 
 .hero-copy {
   animation: fade-up 900ms 240ms both;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin: 0 0 1.7rem;
-  color: var(--teal-bright);
-  font-family: "DM Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.eyebrow::before {
-  width: 28px;
-  height: 1px;
-  background: currentColor;
-  content: "";
 }
 
 h1 {
@@ -231,18 +190,6 @@ h1 {
   height: clamp(4.5rem, 8vw, 7rem);
   margin: 0 clamp(0.75rem, 1.4vw, 1.6rem);
   background: linear-gradient(to bottom, var(--teal), transparent);
-}
-
-.countdown-note {
-  margin: 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--hairline);
-  color: #7f8ca5;
-  font-family: "DM Mono", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-align: right;
-  text-transform: uppercase;
 }
 
 .site-footer {
@@ -350,26 +297,14 @@ h1 {
     width: 170px;
   }
 
-  .launch-status {
-    font-size: 0;
-  }
-
-  .launch-status .status-dot {
-    width: 8px;
-    height: 8px;
-  }
-
   .hero {
     gap: 4.5rem;
     padding-block: 4.5rem 5rem;
   }
 
-  .eyebrow {
-    font-size: 0.68rem;
-  }
-
   h1 {
-    font-size: clamp(3.65rem, 18vw, 5.2rem);
+    max-width: none;
+    font-size: clamp(3rem, 15vw, 4.6rem);
   }
 
   .intro {
@@ -378,27 +313,33 @@ h1 {
   }
 
   .countdown {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    padding-block: 1.5rem 0.5rem;
   }
 
   .time-block {
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--hairline);
+    padding-inline: 0.25rem;
+    text-align: center;
+  }
+
+  .time-block:not(:first-child) {
+    border-left: 1px solid var(--hairline);
   }
 
   .time-block strong {
-    font-size: clamp(3.8rem, 20vw, 5.5rem);
+    font-size: clamp(1.8rem, 9.5vw, 3rem);
+    letter-spacing: -0.08em;
+  }
+
+  .time-block span {
+    margin-top: 0.6rem;
+    font-size: clamp(0.48rem, 2.2vw, 0.62rem);
+    letter-spacing: 0.06em;
   }
 
   .divider {
     display: none;
-  }
-
-  .countdown-note {
-    padding-top: 0;
-    border: 0;
-    text-align: left;
   }
 
   .site-footer {

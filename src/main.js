@@ -33,10 +33,6 @@ function updateCountdown() {
       );
     }
   });
-
-  if (distance === 0) {
-    document.querySelector("#countdown-note").textContent = "We have arrived.";
-  }
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
